@@ -6,7 +6,6 @@
 // console.log("he clickado un a")
 //   e.preventDefault()
 //   })
-          
 
 // Solucion 2 usando los tags de "a"!!!
 const aElements = document.querySelectorAll('a')
@@ -18,7 +17,6 @@ aElements.forEach(aElement => {
   e.preventDefault()
   })
 })
-
 
 // 2 Al hacer click sobre un elemento van a ocurrir varias cosas. Todo depende del tipo de elemento:
 // 2.1 Imágenes: Cambia la imagen por uno de los gif que tienes en la carpeta assets con el nombre magic-*.
@@ -42,17 +40,14 @@ imagesToChange.forEach(image => {
 //   })
 // }
 
-
-
-
 // 2.2 Párrafos: Cambia el color del texto y el de fondo por uno cualquiera.
 const pTexts = document.querySelectorAll("p")
 console.log("Todod los p: ",pTexts)
 pTexts.forEach(par => {
   par.addEventListener("click", () => {
     console.log("he clickado un parrafo")
-    par.style.color = "violet"
-    par.style.backgroundColor = "pink"
+    par.style.color = `${getRandom(colorsToChange)}`
+    par.style.backgroundColor = `${getRandom(colorsToChange)}`
   })
 })
 
@@ -62,7 +57,7 @@ console.log("Todod los articles y section: ",articlesAndSections)
 articlesAndSections.forEach(articleAndSection => {
   articleAndSection.addEventListener("click", () => {
     console.log("he clickado un articleAndSection")
-    articleAndSection.style.backgroundColor = "grey"
+    articleAndSection.style.backgroundColor = `${getRandom(colorsToChange)}`
   })
 })
 
@@ -76,25 +71,23 @@ imagesOverMouse.forEach(image => {
   })
 })
 
-
 // 3.2 Párrafos: Cambia el color del texto y el de fondo por uno cualquiera.
 const pTextsOverMouse = document.querySelectorAll("p")
 pTextsOverMouse.forEach(par => {
   par.addEventListener("mouseover", () => {
-    par.style.color = "red"
-    par.style.backgroundColor = "yellow"
+    par.style.color = `${getRandom(colorsToChange)}`
+    par.style.backgroundColor = `${getRandom(colorsToChange)}`
   })
 })
-
 
 // 3.3 Bloques de article o section: Color de fondo distinto al de párrafo.
 const articlesAndSectionsOverMouse = document.querySelectorAll("article","section")
 articlesAndSectionsOverMouse.forEach(articleAndSection => {
   articleAndSection.addEventListener("mouseover", () => {
-    articleAndSection.style.backgroundColor = "#f66484"
+    // articleAndSection.style.backgroundColor = "#f66484"
+    articleAndSection.style.backgroundColor = `${getRandom(colorsToChange)}`
   })
 })
-
 
 // 4. Crea una función de nombre `getRandom` que acepte un array con valores y devuelva uno de ellos de manera aleatoria.
 //     ```javascript
@@ -115,9 +108,8 @@ const getRandom = (array) => {
 }
 console.log(getRandom(colors))
 
-
 // 5. Utiliza la función creada `getRandom` para utilizar colores aleatorios de una paleta que hayas escogido de [coolors.co](https://coolors.co/palettes/trending) en los apartados anteriores.
+const colorsToChange = ["#CCD5AE","#E9EDC9","#FEFAE0","#FAEDCD","#D4A373"]
 
 // 6. Utiliza la función creada `getRandom` para utilizar _gifs_ aleatorios  en los apartados anteriores.
 const gifToChange = ["abracadabra","magic-1","magic-2","magic-3","magic-4","magic-5","magic-6"]
-
