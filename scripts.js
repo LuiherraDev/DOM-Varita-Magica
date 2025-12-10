@@ -14,7 +14,7 @@ console.log("opcion2 es :",typeof aElements,aElements)
 aElements.forEach(aElement => {
   aElement.addEventListener('click', function(e) {
     console.log("he clickado un a")
-  e.preventDefault()
+    e.preventDefault()
   })
 })
 
@@ -52,7 +52,7 @@ pTexts.forEach(par => {
 })
 
 // 2.3 Bloques de article o section: Cambia el color de fondo.
-const articlesAndSections = document.querySelectorAll("article","section")
+const articlesAndSections = document.querySelectorAll("article")
 console.log("Todod los articles y section: ",articlesAndSections)
 articlesAndSections.forEach(articleAndSection => {
   articleAndSection.addEventListener("click", () => {
